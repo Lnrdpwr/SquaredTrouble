@@ -4,8 +4,8 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private Transform[] _spawnPoints;
-    [SerializeField] private GameObject[] _staticEnemies;
-    [SerializeField] private GameObject[] _unstaticEnemies;
+    [SerializeField] private GameObject[] _staticEnemies;//Enemies with static models
+    [SerializeField] private GameObject[] _unstaticEnemies;//Enemies with unstatic models
     [SerializeField] private float _timeToSpawn;
     [SerializeField] private Vector2 _arenaTopRight, _arenaBottomLeft;
 

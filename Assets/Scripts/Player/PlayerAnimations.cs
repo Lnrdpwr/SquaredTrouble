@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class PlayerAnimations : MonoBehaviour
 {
-    //Скрипт отвечает за проигрывание анимаций
     private Animator _playerAnimator;
 
     private void Start()

@@ -11,7 +11,7 @@ public class Scimitar : MonoBehaviour
 
     private void Start()
     {
-        _target = GameObject.FindGameObjectWithTag("Player").transform.position;
+        _target = PlayerHealth.Instance.transform.position;
         _direction = Vector2.ClampMagnitude(_target - transform.position, _speed);
 
         _scimitarRigidbody = GetComponent<Rigidbody2D>();

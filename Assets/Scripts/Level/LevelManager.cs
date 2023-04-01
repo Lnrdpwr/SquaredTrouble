@@ -8,7 +8,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private LevelResultingPanel _resultingPanel;
     [SerializeField] private TMP_Text _secondsCounter;
 
-    private bool _gameIsRuning = true;
+    private bool _gameIsRunning = true;
     private int _seconds = 0;
 
     private void Start()
@@ -19,14 +19,14 @@ public class LevelManager : MonoBehaviour
     public void StopGame()
     {
         _secondsCounter.gameObject.SetActive(false);
-        _gameIsRuning = false;
+        _gameIsRunning = false;
         _spawner.StopAllCoroutines();
         _resultingPanel.ShowPanel(_seconds);
     }
 
     IEnumerator CountSeconds()
     {
-        while (_gameIsRuning)
+        while (_gameIsRunning)
         {
             yield return new WaitForSeconds(1);
             _seconds++;

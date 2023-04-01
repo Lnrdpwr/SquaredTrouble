@@ -16,10 +16,12 @@ public class PlayerHealth : MonoBehaviour
     private int _currentHealth;
     private int _lastDamage;
     private bool _isInvincible = false;
+    internal static PlayerHealth Instance;
 
     private void Start()
     {
         _currentHealth = _maximumHealth;
+        Instance = this;
     }
 
     public void DoDamage(int damage)
