@@ -291,6 +291,7 @@ MonoBehaviour:
   _timeToSlideBack: 1
   _effect: {fileID: 665076581492914273, guid: ab428a5dadd0e494e80384625e304e5c, type: 3}
   _damagingZone: {fileID: 3169522896715324944}
+  _groundHit: {fileID: 8300000, guid: f115ea3b2316fba43807d23b3459a9a9, type: 3}
 --- !u!1 &3169522897704169074
 GameObject:
   m_ObjectHideFlags: 0

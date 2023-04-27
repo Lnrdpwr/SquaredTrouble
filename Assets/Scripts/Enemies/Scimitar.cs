@@ -4,6 +4,7 @@ public class Scimitar : MonoBehaviour
 {
     [SerializeField] private float _speed;
     [SerializeField] private float _timeToSelfDestroy;
+    [SerializeField] private AudioClip _scimitarAppear;
 
     private Rigidbody2D _scimitarRigidbody;
     private Vector3 _target;
@@ -11,6 +12,8 @@ public class Scimitar : MonoBehaviour
 
     private void Start()
     {
+        SoundManager.Instance.PlayClip(_scimitarAppear);
+
         _target = PlayerHealth.Instance.transform.position;
         _direction = Vector2.ClampMagnitude(_target - transform.position, _speed);
 

@@ -8,6 +8,7 @@ public class Sword : MonoBehaviour
     [SerializeField] private float _timeToLand, _timeToSlideBack;
     [SerializeField] private GameObject _effect;
     [SerializeField] private GameObject _damagingZone;
+    [SerializeField] private AudioClip _groundHit;
 
     private Vector3 _target, _startPosition;
     private SpriteRenderer _shadowRenderer, _swordRenderer;
@@ -35,6 +36,7 @@ public class Sword : MonoBehaviour
             _shadowRenderer.color = new Color(1, 1, 1, progress / _timeToLand);
             yield return new WaitForEndOfFrame();
         }
+        SoundManager.Instance.PlayClip(_groundHit);
         _shadow.SetActive(false);
         Instantiate(_effect, transform.position, Quaternion.identity);
         _startPosition = transform.position;

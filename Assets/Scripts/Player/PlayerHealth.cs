@@ -12,6 +12,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private SpriteRenderer _playerRenderer;
     [SerializeField] private LevelManager _levelManager;
     [SerializeField] private GameObject _healthBarObject;
+    [SerializeField] private AudioClip _takeDamageClip;
 
     private int _currentHealth;
     private int _lastDamage;
@@ -28,6 +29,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (!_isInvincible)
         {
+            SoundManager.Instance.PlayClip(_takeDamageClip);
             _currentHealth -= damage;
             if(_currentHealth <= 0)
             {

@@ -204,6 +204,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 7
   _timeToSelfDestroy: 5
+  _scimitarAppear: {fileID: 8300000, guid: 06bc44ea6ec34fa448eb5066bb83f281, type: 3}
 --- !u!114 &6464061734912997886
 MonoBehaviour:
   m_ObjectHideFlags: 0
