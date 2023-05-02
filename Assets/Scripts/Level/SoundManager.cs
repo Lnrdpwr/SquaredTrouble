@@ -11,19 +11,6 @@ public class SoundManager : MonoBehaviour
         Instance = this;
     }
 
-    void Start()
-    {
-        GameObject[] allManagers = GameObject.FindGameObjectsWithTag("SoundManager");
-        if(allManagers.Length > 1)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            DontDestroyOnLoad(gameObject);
-        }
-    }
-
     public void PlayClip(AudioClip clip)
     {
         _singleSource.PlayOneShot(clip);
