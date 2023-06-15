@@ -19,14 +19,14 @@ public class PlayerMovement : MonoBehaviour
         float verticalMovement = Input.GetAxisRaw("Vertical");
 
         Vector2 movementDirection = new Vector2(horizontalMovement, verticalMovement) * _speed;
-        _playerRigidbody.velocity = Vector2.ClampMagnitude(movementDirection, _speed);
+        _playerRigidbody.velocity = Vector2.ClampMagnitude(movementDirection, _speed);//ClampMagnitude возвращает новый вектор с таким же направлением и с заданной длиной
 
-        if(!_isMoving && movementDirection.magnitude != 0)
+        if(!_isMoving && movementDirection.magnitude != 0)//Если игрок движется
         {
             _isMoving = true;
             _playerAnimations.SetMovingAnimation(_isMoving);
         }
-        else if(_isMoving && movementDirection.magnitude == 0)
+        else if(_isMoving && movementDirection.magnitude == 0)//Если игрок стоит
         {
             _isMoving = false;
             _playerAnimations.SetMovingAnimation(_isMoving);

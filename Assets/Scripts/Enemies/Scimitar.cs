@@ -4,7 +4,6 @@ public class Scimitar : MonoBehaviour
 {
     [SerializeField] private float _speed;
     [SerializeField] private float _timeToSelfDestroy;
-    [SerializeField] private AudioClip _scimitarAppear;
 
     private Rigidbody2D _scimitarRigidbody;
     private Vector3 _target;
@@ -12,13 +11,11 @@ public class Scimitar : MonoBehaviour
 
     private void Start()
     {
-        SoundManager.Instance.PlayClip(_scimitarAppear);
-
-        _target = PlayerHealth.Instance.transform.position;
-        _direction = Vector2.ClampMagnitude(_target - transform.position, _speed);
+        _target = PlayerHealth.Instance.transform.position;//Позиция игрока
+        _direction = Vector2.ClampMagnitude(_target - transform.position, _speed);//Направление полёта
 
         _scimitarRigidbody = GetComponent<Rigidbody2D>();
-        _scimitarRigidbody.velocity = _direction;
+        _scimitarRigidbody.velocity = _direction;//Задаём скорость
 
         Invoke("SelfDestroy", _timeToSelfDestroy);
     }

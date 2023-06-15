@@ -7,18 +7,16 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Spawner _spawner;
     [SerializeField] private LevelResultingPanel _resultingPanel;
     [SerializeField] private TMP_Text _secondsCounter;
-    [SerializeField] private AudioClip _arenaSoundtrack;
 
     private bool _gameIsRunning = true;
     private int _seconds = 0;
 
     private void Start()
     {
-        SoundManager.Instance.ChangeSoundtrack(_arenaSoundtrack);
         StartCoroutine(CountSeconds());
     }
 
-    public void StopGame()
+    public void StopGame()//Метод для остановки игры
     {
         _secondsCounter.gameObject.SetActive(false);
         _gameIsRunning = false;
@@ -26,7 +24,7 @@ public class LevelManager : MonoBehaviour
         _resultingPanel.ShowPanel(_seconds);
     }
 
-    IEnumerator CountSeconds()
+    IEnumerator CountSeconds()//Считает прожитое время
     {
         while (_gameIsRunning)
         {

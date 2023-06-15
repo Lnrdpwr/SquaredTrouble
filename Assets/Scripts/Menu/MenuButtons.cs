@@ -2,7 +2,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuButtons : MonoBehaviour
-{
+{   
+    // нопки дл€ меню
     public void ExitGame()
     {
         Application.Quit();

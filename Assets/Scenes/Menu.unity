@@ -916,7 +916,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u043A\u0440\u0443\u0442\u043E\u0435 \u043D\u0430\u0437\u0432\u0430\u043D\u0438\u0435)"
+  m_text: Squared Trouble
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 288a5c32e6eab204f9758c4e4c20d9e9, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: a3269af43533cfb45a254df37bf28150, type: 2}

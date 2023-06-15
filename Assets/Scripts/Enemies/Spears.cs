@@ -6,7 +6,7 @@ public class Spears : MonoBehaviour
     [SerializeField] private float _timeToAppear, _timeToHide;
     [SerializeField] private GameObject _spawningEffect, _appearEffect;
     [SerializeField] private GameObject _spears;
-    [SerializeField] private AnimationCurve _disappearCurve;
+    [SerializeField] private AnimationCurve _disappearCurve;//Кривая для изменения невидимости(см. инспектор)
     [SerializeField] private AudioClip _spearsAppear;
 
     private SpriteRenderer _spearsRenderer;
@@ -19,17 +19,16 @@ public class Spears : MonoBehaviour
 
     IEnumerator AppearAndHide()
     {
-        yield return new WaitForSeconds(_timeToAppear);
-        Instantiate(_appearEffect, transform.position, Quaternion.identity);
-        _spawningEffect.SetActive(false);
-        _spears.SetActive(true);
-        SoundManager.Instance.PlayClip(_spearsAppear);
+        yield return new WaitForSeconds(_timeToAppear);//Ждём время для появления
+        Instantiate(_appearEffect, transform.position, Quaternion.identity);//Создаём эффект
+        _spawningEffect.SetActive(false);//Выключаем эффект появления
+        _spears.SetActive(true);//Показываем копья
 
         for (float i = 0; i < _timeToHide; i += Time.deltaTime)
         {
-            _spearsRenderer.color = new Color(1, 1, 1, _disappearCurve.Evaluate(i / _timeToHide));
+            _spearsRenderer.color = new Color(1, 1, 1, _disappearCurve.Evaluate(i / _timeToHide));//Через время изменяет альфу спрайта
             yield return new WaitForEndOfFrame();       
         }
-        Destroy(gameObject);
+        Destroy(gameObject);//Уничтожаем копья
     }
 }
